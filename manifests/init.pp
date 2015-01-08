@@ -6,13 +6,13 @@
 class postgis {
   include homebrew
 
-  $version = '2.1.0-boxen1'
+  $version = '2.1.7-boxen1'
 
   homebrew::formula { 'postgis':
-    before => Package['boxen/brews/postgis'],
+    before => Package['postgis'],
   }
 
-  package { 'boxen/brews/postgis':
+  package { 'postgis':
     ensure => $version,
     require => Package['boxen/brews/postgresql']
   }
