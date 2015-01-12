@@ -6,7 +6,7 @@ class Postgis < Formula
   sha1 '5ac24b95495be258a7430c08b3407d7beca1832a'
 
   head 'http://svn.osgeo.org/postgis/trunk/'
-  version '2.1.7-boxen1'
+  version '2.1.5-boxen1'
 
   option 'with-gui', 'Build shp2pgsql-gui in addition to command line tools'
 
