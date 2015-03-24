@@ -24,10 +24,12 @@ class Postgis < Formula
   depends_on 'json-c'
   depends_on 'gdal'
 
+  POSTGRESQL_PATH = '/opt/boxen/homebrew/Cellar/postgresql/9.3.1-boxen'
+
   def install
     # Follow the PostgreSQL linked keg back to the active Postgres installation
     # as it is common for people to avoid upgrading Postgres.
-    postgres_realpath = Formula.factory('postgresql').opt_prefix.realpath
+    postgres_realpath = POSTGRESQL_PATH
 
     ENV.deparallelize
 
@@ -93,7 +95,7 @@ class Postgis < Formula
   end
 
   def caveats;
-    pg = Formula.factory('postgresql').opt_prefix
+    pg = POSTGRESQL_PATH
     <<-EOS.undent
       To create a spatially-enabled database, see the documentation:
         http://postgis.net/docs/manual-2.1/postgis_installation.html#create_new_db_extensions
